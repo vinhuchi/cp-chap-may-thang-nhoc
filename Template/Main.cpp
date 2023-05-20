@@ -14,7 +14,7 @@ using LL = long long;
 #define unpack(arr, start, end) loop(x, start, end){print(arr[x]) } // loop through the array and print it 
 
 #define Debug(x) printf("Var \"%s\" : %d\n",#x,x)
-#define DebugS(x) printf("Var \"%s\" : "x"\n",#x)
+#define DebugS(x) (cout << "Var \"" << #x << "\" : " << x << endl)
 
 //Methods
 #define I first //index

@@ -30,6 +30,9 @@
         "variant": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "xiosbase": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp"
     }
 }
