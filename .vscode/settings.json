@@ -17,6 +17,19 @@
         "regex": "cpp",
         "valarray": "cpp",
         "ostream": "cpp",
-        "source_location": "cpp"
+        "source_location": "cpp",
+        "*.tcc": "cpp",
+        "expected": "cpp",
+        "optional": "cpp",
+        "ratio": "cpp",
+        "system_error": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "variant": "cpp",
+        "typeindex": "cpp",
+        "typeinfo": "cpp",
+        "random": "cpp"
     }
 }
