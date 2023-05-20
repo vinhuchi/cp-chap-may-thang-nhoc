@@ -1,7 +1,8 @@
 #include<iostream>
 using namespace std;
 int main(){
-    cout << "test" << endl;
+    int x;
+    cin >> x;
     cout << "Updated" << endl;
 
 }
