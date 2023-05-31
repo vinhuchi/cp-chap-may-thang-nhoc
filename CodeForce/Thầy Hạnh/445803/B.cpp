@@ -9,6 +9,7 @@ using LL = long long;
 
 #define loop(x, start, end) for(int x=start; x < end; x++) // pass x as start to end
 #define loop2(x, start, end) for(int x=end-1; x >= start; x--) // pass x as end minus till reach start
+#define endl "\n"
 #define newl() cout << endl; // cout with no space
 
 #define read(x) cin >> x
@@ -24,6 +25,8 @@ using LL = long long;
 #define V second //value
 #define PB push_back
 #define MP make_pair
+
+const int MOD = 998244353;
 int main(){
     IO("countpath");
     FIO();
@@ -31,32 +34,46 @@ int main(){
     int q;
     read(q);
     //printl(q);
-    vector<vector<LL>> DB (2010 , vector<LL> (2010));
+    vector<pair<int, int>> Querry;
     //DB[1][1]=1;
     //printl(DB[1][1]);
-    for (int i=1;i<2010;i++){
-        for (int j=1;j<2010;j++){
-            DB[i][j]=0;
-        }
-    }
-    for (int i = 0; i < 2010; i++){
-        DB[i][1] = 1;
-    }
-    for (int j = 0; j < 2010; j++){
-        DB[1][j] = 1;
-    }
-    for (int i=2;i<2010;i++){
-        for (int j=2;j<2010;j++){
-            DB[i][j]=(DB[i-1][j]%998244353+DB[i-1][j-1]%998244353+DB[i][j-1]%998244353)%998244353;
-            
-        }
-    }
-    
-    while (q--)
-    {
+
+
+    int MaxR=0,MaxC=0;
+    loop(_,0,q){
         int r,c;
         read(r);
         read(c);
-        printl(DB[r][c]);
+        
+        MaxR=max(MaxR,r);
+        MaxC=max(MaxC,c);
+
+        Querry.push_back({r,c});
+        
+    }
+    vector<vector<LL>> DB (MaxR , vector<LL> (MaxC));
+   //memset(DB, 0, sizeof(DB));
+    for (int i=0;i<MaxR;i++){
+        for (int j=0;j<MaxC;j++){
+            DB[i][j]=0;
+        }
+    }
+    for (int i = 0; i < MaxR; i++){
+        DB[i][0] = 1;
+    }
+    for (int j = 0; j < MaxC; j++){
+        DB[0][j] = 1;
+    }
+    for (int i=1;i<MaxR;i++){
+        for (int j=1;j<MaxC;j++){
+            
+            DB[i][j]+=(DB[i-1][j]+DB[i-1][j-1]+DB[i][j-1])%MOD;
+            //printl(DB[i][j]);
+        }
+    }
+    for (auto Q:Querry){
+        int r = Q.first-1;
+        int c = Q.second-1;
+        cout << DB[r][c] << endl;
     }
 }

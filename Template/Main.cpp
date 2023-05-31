@@ -5,8 +5,11 @@ using namespace std;
 using LL = long long;
 //Functions
 #define IO(value)  freopen(value".inp", "r", stdin);   freopen(value".out", "w", stdout);
+#define FIO() ios_base::sync_with_stdio(false); cin.tie(NULL);
+
 #define loop(x, start, end) for(int x=start; x < end; x++) // pass x as start to end
 #define loop2(x, start, end) for(int x=end-1; x >= start; x--) // pass x as end minus till reach start
+#define newl() cout << endl; // cout with no space
 
 #define read(x) cin >> x
 #define print(x) cout << x << " "; // cout with space

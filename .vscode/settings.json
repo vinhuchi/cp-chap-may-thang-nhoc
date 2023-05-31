@@ -33,6 +33,13 @@
         "random": "cpp",
         "xiosbase": "cpp",
         "xstring": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "bitset": "cpp",
+        "chrono": "cpp",
+        "algorithm": "cpp",
+        "new": "cpp",
+        "cstdlib": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp"
     }
 }
