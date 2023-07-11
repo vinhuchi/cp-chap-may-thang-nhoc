@@ -25,16 +25,51 @@ using LL = long long;
 #define V second //value
 #define PB push_back
 #define MP make_pair
+#define int long long
 
-int main(){
-    IO("Number Spiral");
-    
+int32_t main(){
+
     int T;
     read(T);
     while (T--){
-        int x,y;
-        read(x);
+        int y,x;
         read(y);
+        read(x);
         
+        int farthestpoint = max (x,y);
+        int maxpossible = farthestpoint*farthestpoint;
+        int maxpossibleB = (farthestpoint-1)*(farthestpoint-1)+1;
+        int check = abs(x-y);
+        //print(farthestpoint);
+        //print(maxpossible);
+        //print(maxpossibleB);
+        int mid = (maxpossibleB+maxpossible)/2;
+        //print(mid);
+        int ans;
+        
+        if (x==y){
+            ans=mid;
+        } else if (x<y) {
+              if (y%2==1){
+                //print("case1");
+                ans = mid-check;
+            } else {
+                //print("case2");
+                ans = mid+check;
+            }
+        } else {
+            if (x%2==1){
+                //print("case1");
+                ans = mid+check;
+            } else {
+                //print("case2");
+                ans = mid-check;
+            }
+        }
+        
+        
+        
+        print(ans);
+        newl();
     }
 }
