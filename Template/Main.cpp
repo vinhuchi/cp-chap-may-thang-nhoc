@@ -2,8 +2,17 @@
 
 using namespace std;
 
+<<<<<<< HEAD
+//Type
+using LL = long long;
+#define endl "\n"
+//Functions
+#define IO(value)  freopen(value".inp", "r", stdin);   freopen(value".out", "w", stdout);
+#define FIO() ios_base::sync_with_stdio(false); cin.tie(NULL);
+=======
 const int inf  = 1e9 + 7;
 const int maxN = 1e5 + 7;
+>>>>>>> 70be2594685318ecc938621681ea15bd6010d2b7
 
 int n, q;
 int a[maxN];
