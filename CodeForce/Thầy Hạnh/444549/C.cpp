@@ -3,7 +3,6 @@ using namespace std;
 
 //Type
 using LL = long long;
-#define endl "\n"
 //Functions
 #define IO(value)  freopen(value".inp", "r", stdin);   freopen(value".out", "w", stdout);
 #define FIO() ios_base::sync_with_stdio(false); cin.tie(NULL);
@@ -27,16 +26,43 @@ using LL = long long;
 #define MP make_pair
 
 int main(){
-    IO("Test");
-    
-    int x;
-    read(x);
-    printl(x);
-    string b = "a";
-    DebugS(b);
-    loop2(i,0,10){
-        Debug(i);
+    IO("honeymoon");
+    int d,s;
+    read(d);
+    read(s);
+    int Mmin=0,Mmax=0;
+    vector<pair<int,int>> Vinhuchi;
+    loop (_,0,d){
+        int M1,M2;
+        cin >> M1 >> M2;
+        Mmin=Mmin+M1;
+        Mmax=Mmax+M2;
+        Vinhuchi.push_back({M1,M2});
     }
-    int a[5] ={1,2};
-    unpack(a,0,5);
+    
+    if (s>=Mmin&&s<=Mmax){
+        printl("YES");
+        int diff = Mmax- s;
+        
+        loop (i,0,d){
+            int toprint = Vinhuchi[i].second;
+            if (diff>0){
+                int diffMin = Vinhuchi[i].first;
+                int diffMax = Vinhuchi[i].second;
+                int bestdiff = diffMax-diffMin;
+
+                if (bestdiff<=diff){
+                    diff=diff-bestdiff;
+                    toprint=diffMin;
+                } else {
+                    toprint=diffMax-diff;
+                    diff=0;
+                    
+                }
+            }
+            print(toprint);
+        }
+    } else {
+        printl("NO");
+    }
 }

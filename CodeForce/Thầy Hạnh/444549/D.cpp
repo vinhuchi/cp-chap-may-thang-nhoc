@@ -25,18 +25,16 @@ using LL = long long;
 #define V second //value
 #define PB push_back
 #define MP make_pair
-
+const int M=100005;
 int main(){
-    IO("Test");
-    
-    int x;
-    read(x);
-    printl(x);
-    string b = "a";
-    DebugS(b);
-    loop2(i,0,10){
-        Debug(i);
+    IO("divisors");
+    int s,t;
+    read(s);
+    read(t);
+    vector<int> V[M];
+    loop(i,2,M){
+        for (int j=i*2;j<=M;j++){
+            V[i].push_back(j);
+        }
     }
-    int a[5] ={1,2};
-    unpack(a,0,5);
 }

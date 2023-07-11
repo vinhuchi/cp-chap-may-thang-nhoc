@@ -3,7 +3,6 @@ using namespace std;
 
 //Type
 using LL = long long;
-#define endl "\n"
 //Functions
 #define IO(value)  freopen(value".inp", "r", stdin);   freopen(value".out", "w", stdout);
 #define FIO() ios_base::sync_with_stdio(false); cin.tie(NULL);
@@ -27,16 +26,12 @@ using LL = long long;
 #define MP make_pair
 
 int main(){
-    IO("Test");
-    
+    IO("watermelon");
     int x;
     read(x);
-    printl(x);
-    string b = "a";
-    DebugS(b);
-    loop2(i,0,10){
-        Debug(i);
+    if (x%2==0 && x>2 ){
+        printl("NO");
+    } else {
+        printl("YES");
     }
-    int a[5] ={1,2};
-    unpack(a,0,5);
 }

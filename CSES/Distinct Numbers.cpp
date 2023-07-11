@@ -27,16 +27,18 @@ using LL = long long;
 #define MP make_pair
 
 int main(){
-    IO("Test");
-    
-    int x;
-    read(x);
-    printl(x);
-    string b = "a";
-    DebugS(b);
-    loop2(i,0,10){
-        Debug(i);
+    int N;
+    read(N);
+    int Arr[N+5];
+    loop(i,0,N){
+        read(Arr[i]);
     }
-    int a[5] ={1,2};
-    unpack(a,0,5);
+    int C=1;
+    sort(Arr,Arr+N);
+    loop(i,1,N){
+        if (Arr[i]!=Arr[i-1]){
+            C++;
+        }
+    }
+    print(C);
 }

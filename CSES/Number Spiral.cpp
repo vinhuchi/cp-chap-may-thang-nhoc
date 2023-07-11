@@ -27,16 +27,14 @@ using LL = long long;
 #define MP make_pair
 
 int main(){
-    IO("Test");
+    IO("Number Spiral");
     
-    int x;
-    read(x);
-    printl(x);
-    string b = "a";
-    DebugS(b);
-    loop2(i,0,10){
-        Debug(i);
+    int T;
+    read(T);
+    while (T--){
+        int x,y;
+        read(x);
+        read(y);
+        
     }
-    int a[5] ={1,2};
-    unpack(a,0,5);
 }

@@ -27,16 +27,23 @@ using LL = long long;
 #define MP make_pair
 
 int main(){
-    IO("Test");
+    // /IO("Permutations");
     
     int x;
     read(x);
-    printl(x);
-    string b = "a";
-    DebugS(b);
-    loop2(i,0,10){
-        Debug(i);
+    int nextres = 2;
+    if (x==1) {
+        print(x);
+    } else if (x>1&&x<4){
+        printl("NO SOLUTION");
+    } else {
+        loop (_,0,x){
+            print(nextres);
+            nextres=nextres+2;
+            if (nextres>x){
+                nextres=1;
+            }
+        }
+        
     }
-    int a[5] ={1,2};
-    unpack(a,0,5);
 }
