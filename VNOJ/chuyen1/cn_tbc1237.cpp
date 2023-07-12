@@ -26,16 +26,35 @@ using LL = long long;
 #define MP make_pair
 
 int main(){
-    IO("Test");
-    
-    int x;
-    read(x);
-    printl(x);
-    string b = "a";
-    DebugS(b);
-    loop2(i,0,10){
-        Debug(i);
+    IO("cn_tbc1237");
+    FIO();
+    double n;
+    cin >> n;
+    double org = n;
+    long long a = floor(n);
+    long long b = ceil(n);
+    //double whole, fractional;
+
+    //print(fractional);
+    long long count = 1;
+    if (a != b){
+        //fractional = std::modf(n, &whole);
+        //print(n*10);
+        while ((abs(n - round(n)) > 1e-10)){
+            
+            n=n+org;
+            //fractional = std::modf(n, &whole);
+            //print(n)
+            //print(fractional);
+            //newl();
+            count=count+1;
+        }
+        //print(round(n));
+        //print(n);
+       // print(round(n)-n);
     }
-    int a[5] ={1,2};
-    unpack(a,0,5);
+
+    print(count);
+
+
 }

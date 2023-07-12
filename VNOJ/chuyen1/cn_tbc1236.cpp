@@ -26,16 +26,25 @@ using LL = long long;
 #define MP make_pair
 
 int main(){
-    IO("Test");
-    
-    int x;
-    read(x);
-    printl(x);
-    string b = "a";
-    DebugS(b);
-    loop2(i,0,10){
-        Debug(i);
+    IO("cn_tbc1236");
+    FIO();
+    int n;
+    cin >> n;
+    double test[n+5];
+    for (int i=0;i<n;i++){
+        int a,b;
+        char x;
+        read(a);
+        read(x);
+        read(b);
+        test[i]=a*1.0/b;
     }
-    int a[5] ={1,2};
-    unpack(a,0,5);
+    int c,d;
+    char x;
+    read(c);
+    read(x);
+    read(d);
+    double org = c*1.0/d;
+
+
 }

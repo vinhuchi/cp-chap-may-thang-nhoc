@@ -45,7 +45,7 @@ int SumDigit(int x, int limit){
     return sum;
 }
 int main() {
-    IO("b");
+    //IO("b");
     FIO();
     int s, d, m;
     read(s);
@@ -86,6 +86,7 @@ int main() {
             print(vinhuchi);
         } else if (m==3  || m == 9){
             //print(s%m);
+            int count = 0;
             if (s%m==0){
                 int remain = s;
                 string vinhuchi = "";
@@ -96,6 +97,7 @@ int main() {
                     int remamining = min(d*2,remain);
                     if (remain/2==remamining && d*2 != remain/2){
                         //print("Flagged");
+                        //print(remain)
                         remain=0;
                     } else {
                         remain=remain-remamining;
@@ -103,12 +105,14 @@ int main() {
                     
                     
                     //print(remamining);
+                    count=count+2;
                     vinhuchi= to_string(remamining/2)+vinhuchi;
                     vinhuchi= to_string(remamining/2)+vinhuchi;
                     
                     
 
                 }
+                print(vinhuchi.size());
                 print(vinhuchi);
                 
             } else {
@@ -128,27 +132,53 @@ int main() {
                 } else {
                     lastdivider=d-1;
                 }
-            // print(lastdivider);
+                //print("Divider: ");
+                //print(lastdivider);
+                //newl();
                 while (remain!=0){
 
                     
                     int remamining = d*2;
                     if (remain>lastdivider*2){
+                        //print("Better Than Divider")
                         remain=remain-remamining;
-                        if (remain<=lastdivider*2 && (remain/2)%2!=0){
-                            
+                        if (remain<=lastdivider*2 && ((remain/2)%2!=0 || remain==0)){
+                            //print("Enough");
                             remain=remain+2;
                             remamining=remamining-2;
+                            if (remain==2){
+                                remain=remain+2;
+                                remamining=remamining-2;
+                            }
                         }
                         
-                        //print(remamining);
+                        
                         vinhuchi= to_string(remamining/2)+ vinhuchi;
                         vinhuchi= to_string(remamining/2) + vinhuchi ;
+                        //print(remamining);
                         //print(vinhuchi);
+                        //newl();
                     } else {
                         //
-                        vinhuchi= to_string(remain/2) + vinhuchi;
-                        vinhuchi= to_string(remain/2) + vinhuchi;
+                        //print("Missing");
+                        //print(remain/2);
+                        vinhuchi= vinhuchi + to_string(remain/2);
+                        //print(vinhuchi);
+                        string vinhuchinew = "";
+                        int pushed = false;
+                        for (int i=0;i<vinhuchi.size();i++){
+                            if (!pushed && (vinhuchi[i]-'0')>remain/2){
+                                vinhuchinew=vinhuchinew+to_string(remain/2);
+                                vinhuchinew=vinhuchinew+vinhuchi[i];
+                                pushed=true;
+                            } else {
+                                vinhuchinew = vinhuchinew +vinhuchi[i];
+                            }
+                        }
+                        if (pushed==false){
+                            vinhuchinew=vinhuchinew+to_string(remain/2);
+                        }
+                        vinhuchi= vinhuchinew;
                         remain=0;
                     }
                     
@@ -156,7 +186,6 @@ int main() {
                 }
                 print(vinhuchi);
             }
-            
         } else if (m==5){
             if (s-m*2<0){
                 print(-1);

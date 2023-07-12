@@ -9,7 +9,7 @@ using LL = long long;
 
 #define loop(x, start, end) for(int x=start; x < end; x++) // pass x as start to end
 #define loop2(x, start, end) for(int x=end-1; x >= start; x--) // pass x as end minus till reach start
-#define newl() cout << endl; // cout with no space
+#define newl() cout << "\n"; // cout with no space
 
 #define read(x) cin >> x
 #define print(x) cout << x << " "; // cout with space
@@ -24,18 +24,26 @@ using LL = long long;
 #define V second //value
 #define PB push_back
 #define MP make_pair
-
-int main(){
-    IO("Test");
-    
-    int x;
-    read(x);
-    printl(x);
-    string b = "a";
-    DebugS(b);
-    loop2(i,0,10){
-        Debug(i);
+#define int long long
+int32_t main(){
+    IO("Two Knights");
+    int n;
+    read(n);
+    int dp[n+5];
+    dp[1]=0;
+    dp[2]=4;
+    int count = 0;
+    int index = 0;
+    for (int i=1;i<=n;i++){
+        //print(a[i]);
+        //print(b[count])
+        //print(abs(a[i]-b[count]));
+        //newl();
+        if (i==1||i==2){
+            print(dp[i]);
+            continue;
+        }
+        printl(dp[i])
     }
-    int a[5] ={1,2};
-    unpack(a,0,5);
+    
 }
