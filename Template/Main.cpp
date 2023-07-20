@@ -79,6 +79,7 @@ int main() {
     for (int i = 1; i <= n; ++i) cin >> a[i];
     build(1, 1, n);
 
+    // Get q value
     cin >> q;
     while (q--) {
         int type, x, y;
