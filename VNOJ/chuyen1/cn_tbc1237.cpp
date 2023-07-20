@@ -24,21 +24,37 @@ using LL = long long;
 #define V second //value
 #define PB push_back
 #define MP make_pair
+
 int main(){
-    IO("dayso");
+    IO("cn_tbc1237");
     FIO();
-    int N,L,R;
-    read(N);
-    read(L);
-    read(R); 
-    int DP[N+5];
-    int arr[N+5];
-    for (int i=0;i<N;i++){
-        read(arr[i]);
+    double n;
+    cin >> n;
+    double org = n;
+    long long a = floor(n);
+    long long b = ceil(n);
+    //double whole, fractional;
+
+    //print(fractional);
+    long long count = 1;
+    if (a != b){
+        //fractional = std::modf(n, &whole);
+        //print(n*10);
+        while ((abs(n - round(n)) > 1e-10)){
+            
+            n=n+org;
+            //fractional = std::modf(n, &whole);
+            //print(n)
+            //print(fractional);
+            //newl();
+            count=count+1;
+        }
+        //print(round(n));
+        //print(n);
+       // print(round(n)-n);
     }
-    DP[0]=0;
-    for (int i=1;i<=N;i++){
-        
-        DP[i]=max(DP[i-1],arr[i-1]+DP[i-1]);
-    }
+
+    print(count);
+
+
 }

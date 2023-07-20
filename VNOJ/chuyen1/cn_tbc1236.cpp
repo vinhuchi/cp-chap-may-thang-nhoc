@@ -24,21 +24,27 @@ using LL = long long;
 #define V second //value
 #define PB push_back
 #define MP make_pair
+
 int main(){
-    IO("dayso");
+    IO("cn_tbc1236");
     FIO();
-    int N,L,R;
-    read(N);
-    read(L);
-    read(R); 
-    int DP[N+5];
-    int arr[N+5];
-    for (int i=0;i<N;i++){
-        read(arr[i]);
+    int n;
+    cin >> n;
+    double test[n+5];
+    for (int i=0;i<n;i++){
+        int a,b;
+        char x;
+        read(a);
+        read(x);
+        read(b);
+        test[i]=a*1.0/b;
     }
-    DP[0]=0;
-    for (int i=1;i<=N;i++){
-        
-        DP[i]=max(DP[i-1],arr[i-1]+DP[i-1]);
-    }
+    int c,d;
+    char x;
+    read(c);
+    read(x);
+    read(d);
+    double org = c*1.0/d;
+
+
 }

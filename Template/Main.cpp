@@ -1,23 +1,17 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
-<<<<<<< HEAD
 //Type
 using LL = long long;
-#define endl "\n"
 //Functions
 #define IO(value)  freopen(value".inp", "r", stdin);   freopen(value".out", "w", stdout);
 #define FIO() ios_base::sync_with_stdio(false); cin.tie(NULL);
-=======
-const int inf  = 1e9 + 7;
-const int maxN = 1e5 + 7;
->>>>>>> 70be2594685318ecc938621681ea15bd6010d2b7
 
-int n, q;
-int a[maxN];
-int st[4 * maxN]; // Lí do sử dụng kích thước mảng là 4 * maxN sẽ được giải thích ở phần sau
+#define loop(x, start, end) for(int x=start; x < end; x++) // pass x as start to end
+#define loop2(x, start, end) for(int x=end-1; x >= start; x--) // pass x as end minus till reach start
+#define newl() cout << endl; // cout with no space
 
+<<<<<<< HEAD
 // Thủ tục xây dựng cây phân đoạn
 void build(int id, int l, int r) {
     // Đoạn chỉ gồm 1 phần tử, không có nút con
@@ -86,5 +80,33 @@ int main() {
         cin >> type >> x >> y;
         if (type == 1) update(1, 1, n, x, y); // Gán giá trị y cho phần tử ở vị trí x 
         else cout << get(1, 1, n, x, y) << '\n'; // In ra giá trị nhỏ nhất trong đoạn [x, y]
+=======
+#define read(x) cin >> x
+#define print(x) cout << x << " "; // cout with space
+#define printl(x) cout << x << endl; // cout with no space
+#define unpack(arr, start, end) loop(x, start, end){print(arr[x]) } // loop through the array and print it 
+
+#define Debug(x) printf("Var \"%s\" : %d\n",#x,x)
+#define DebugS(x) (cout << "Var \"" << #x << "\" : " << x << endl)
+
+//Methods
+#define I first //index
+#define V second //value
+#define PB push_back
+#define MP make_pair
+
+int main(){
+    IO("Test");
+    
+    int x;
+    read(x);
+    printl(x);
+    string b = "a";
+    DebugS(b);
+    loop2(i,0,10){
+        Debug(i);
+>>>>>>> 6a41e38813c12c40ae3730c4e851380fa769fa0c
     }
+    int a[5] ={1,2};
+    unpack(a,0,5);
 }
