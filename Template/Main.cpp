@@ -20,8 +20,6 @@ using LL = long long;
 
 #define Debug(x) printf("Var \"%s\" : %d\n",#x,x)
 #define DebugS(x) (cout << "Var \"" << #x << "\" : " << x << endl)
-string FileName = std::string(__FILE__).substr(0, std::string(__FILE__).find_last_of("."));
-
 //Methods
 #define I first //index
 #define V second //value
