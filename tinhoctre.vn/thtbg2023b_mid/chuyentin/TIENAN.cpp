@@ -107,6 +107,7 @@ int main() {
             int before=l+1;
             int after=r-1;
             int range = r-l;
+
             int sum1 =  range* get(1,1,d,before,r); 
             int sum2 = range * get(1,1,d,l,after); // add the current element so you always compute average of `x` elements.
             if (sum1>sum2){
@@ -127,6 +128,7 @@ int main() {
                     copy2--;
                     range2=range2-1;
                     //print(range2);
+
                     maxx = max( sum1, sum2 ); //maximize max
                     if (maxx>rmax){
                         if (sum1>sum2){
@@ -135,6 +137,7 @@ int main() {
                             vinhuchi[sum2].push_back(make_pair(l,copy2+1));
                         }
                     }
+
                     rmax = max(maxx,rmax);
                 }
                // print(copy1)
@@ -152,6 +155,7 @@ int main() {
                 } else {
                     l=r;
                 }
+                
                 maxx = max( sum1, sum2 ); //maximize max
                 rmax = max(maxx,rmax);
             } else {
