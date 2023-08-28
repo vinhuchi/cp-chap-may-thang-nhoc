@@ -1,3 +1,4 @@
+//https://oj.vnoi.info/problem/bedao_m15_uppercase
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -26,5 +27,32 @@ using LL = long long;
 #define PB push_back
 #define MP make_pair
 int main() {
+
+    string S;
+    getline(cin,S);
+    string New = "";
+    if (S.size()>0){
+        
+        int uppercase = false;
+        if (S[0] != ' ') {
+            New+= toupper(S[0]);
+        } else {
+            uppercase=true;
+        }
+        for (int i = 1; i < S.size(); i++) {
+            if (S[i] != ' ') {
+                if (uppercase==true) {
+                    New += toupper(S[i]);
+                    uppercase = false;
+                } else {
+                    New += S[i];
+                }
+            } else {
+                uppercase = true;
+            }
+        }
+    }
+    
+    print(New);
     return 0;
 }

@@ -26,5 +26,48 @@ using LL = long long;
 #define PB push_back
 #define MP make_pair
 int main() {
+    //IOF();
+    FIO();
+    int T;
+    read(T);
+    while (T--){
+        string n;
+        read(n);
+        LL total = 0;
+        for (LL i=0;i<n.size();i++){
+            total += n[i] - '0';
+        }
+        string vinhuchi = "";
+        if (total==1 || total==0){
+            printl("-1");
+        } else {
+            LL added=false;
+
+            LL checktype = false;
+            LL curnum = n[n.size()-1];
+            LL dif = 0;
+            dif = curnum - '0';
+            vinhuchi=vinhuchi+"0";
+            for (LL i=n.size()-2;i>=0;i--){
+                if (!added){
+                    if (dif>=2 and n[i]!='9') {
+                        vinhuchi = to_string(n[i]-'0'+1) + vinhuchi ;
+                        added = true;
+                    } else {
+                        vinhuchi = "0" + vinhuchi ;
+                        dif = dif + (n[i] - '0');
+                    }
+                        
+                } else {
+                    vinhuchi = n[i] +vinhuchi ;
+                }
+                
+            }
+            if (!added){
+                vinhuchi = "1" + vinhuchi ;
+            }
+            printl(vinhuchi);
+        }
+    }
     return 0;
 }

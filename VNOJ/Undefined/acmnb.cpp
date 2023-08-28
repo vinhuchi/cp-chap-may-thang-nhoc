@@ -25,6 +25,45 @@ using LL = long long;
 #define V second //value
 #define PB push_back
 #define MP make_pair
+bool sortbysec(const pair<int,int> &a,
+              const pair<int,int> &b)
+{
+    return (a.second < b.second);
+}
+ 
 int main() {
+    IOF();
+    FIO();
+    int n;
+    read(n);
+    LL sum=0;
+    vector<pair<int,LL>> v;
+    LL a[n+5];
+    LL b[n+5];
+    int acando = n;
+    int bcando = n;
+    loop(i,0,2*n){
+        LL as;
+        LL bs;
+        read(as);
+        a[i]=as;
+        read(bs);
+        b[i]=bs;
+        if (bs>as) {
+            v.PB(MP(2,bs-as));
+        } else if (bs==as) {
+            v.PB(MP(0,0));
+        } else {
+            v.PB(MP(1,as-bs));
+        }
+        sort(v.begin(), v.end(), sortbysec);
+    }
+    loop(i,0,2*n){
+        if (v[i].I==2){
+            
+        } else if (v[i].I == 1) {
+
+        }
+    }
     return 0;
 }

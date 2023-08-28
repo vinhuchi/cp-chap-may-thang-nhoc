@@ -1,3 +1,4 @@
+//https://oj.vnoi.info/problem/fcb050_goal
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -26,5 +27,12 @@ using LL = long long;
 #define PB push_back
 #define MP make_pair
 int main() {
+
+    int N;
+    read(N);
+    LL minus=N/15;
+    LL add = N/10;
+    LL check = N/(30);
+    print(N+add*2-minus-check*2);
     return 0;
 }

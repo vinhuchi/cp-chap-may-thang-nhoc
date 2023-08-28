@@ -1,3 +1,4 @@
+//https://oj.vnoi.info/problem/fcb011_mod
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -26,5 +27,20 @@ using LL = long long;
 #define PB push_back
 #define MP make_pair
 int main() {
+
+    string S;
+    read(S);
+    if (S.size()>=3){
+        for (int i=S.size()-3;i<S.size();i++){
+            cout << S[i];
+        }
+    } else {
+        for (int i=0;i<3-S.size();i++){
+            cout << '0';
+        }
+        for (int i=0;i<S.size();i++){
+            cout << S[i];
+        }
+    }
     return 0;
 }

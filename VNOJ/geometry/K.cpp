@@ -26,5 +26,14 @@ using LL = long long;
 #define PB push_back
 #define MP make_pair
 int main() {
+
+    long long x,y,A,B,C;
+    cin >> x >> y >> A >> B >> C;
+    if (x*A+y*B+C == 0){
+        cout << "YES";
+    } else {
+        cout << "NO";
+    }
+
     return 0;
 }

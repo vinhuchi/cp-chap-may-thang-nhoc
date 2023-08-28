@@ -25,6 +25,14 @@ using LL = long long;
 #define V second //value
 #define PB push_back
 #define MP make_pair
+
 int main() {
+    IOF();
+    FIO();
+    string s;
+    read(s);
+    map<string,string> vinhuchi;
+    string grammer = s.substr(0, s.find(" "));
+
     return 0;
 }

@@ -25,6 +25,22 @@ using LL = long long;
 #define V second //value
 #define PB push_back
 #define MP make_pair
+
 int main() {
+    //IOF();
+    FIO();
+    LL T;
+    read(T);
+    while (T--){
+        LL x,y;
+        read(x);
+        read(y);
+        x=(x*(x+1))/2;
+        y=(y*(y+1))/2;
+        //print(x);
+        //print(y);
+        printl(x*y);
+    }
+    
     return 0;
 }

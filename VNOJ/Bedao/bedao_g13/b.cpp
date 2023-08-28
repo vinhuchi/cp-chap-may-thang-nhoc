@@ -25,6 +25,18 @@ using LL = long long;
 #define V second //value
 #define PB push_back
 #define MP make_pair
+
 int main() {
+    IOF();
+    FIO();
+    int n;
+    read(n);
+    LL arr[n+5];
+    LL sum=0;
+    loop(i,0,n){
+        read(arr[i]);
+        sum+=arr[i];
+    }
+
     return 0;
 }
