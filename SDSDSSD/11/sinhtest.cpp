@@ -6,7 +6,9 @@ namespace fs = filesystem;
 
 int main() {
     fs::create_directory("tests");
-    for (int testIndex = 1; testIndex <= 20; testIndex++) {
+
+    // First 6 test cases with values smaller than 10^5
+    for (int testIndex = 1; testIndex <= 6; testIndex++) {
         string folderName = "tests/test" + to_string(testIndex);
         fs::create_directory(folderName);
         string inputFileName = folderName + "/test" + to_string(testIndex) + ".inp";
@@ -14,18 +16,47 @@ int main() {
         // Tạo file input
         ofstream inputFile(inputFileName);
 
-        // Sinh test với N <= 500 và K <= 255
-        int N = rand() % 501;
-        int K = rand() % 256 % (N+1);
+        // Ghi giá trị mảng a vào file
+        int value = rand() % 100001; // Values smaller than 10^5
+        inputFile << value;
 
-        // Ghi giá trị N và K vào file
-        inputFile << N << " " << K << endl;
+        // Đóng file
+        inputFile.close();
+
+        cout << "Test " << testIndex << " input generated: " << inputFileName << endl;
+    }
+
+    // Next 6 test cases with values between 10^5 and 10^9
+    for (int testIndex = 7; testIndex <= 12; testIndex++) {
+        string folderName = "tests/test" + to_string(testIndex);
+        fs::create_directory(folderName);
+        string inputFileName = folderName + "/test" + to_string(testIndex) + ".inp";
+
+        // Tạo file input
+        ofstream inputFile(inputFileName);
 
         // Ghi giá trị mảng a vào file
-        for (int i = 0; i < N; i++) {
-            int value = rand() % 101; // Giả sử giá trị trong mảng là ngẫu nhiên từ 0 đến 1000
-            inputFile << value << " ";
-        }
+        int value = rand() % 900000001 + 100000000; // Values between 10^5 and 10^9
+        inputFile << value;
+
+        // Đóng file
+        inputFile.close();
+
+        cout << "Test " << testIndex << " input generated: " << inputFileName << endl;
+    }
+
+    // Last 8 test cases with values between 10^9 and 10^18
+    for (int testIndex = 13; testIndex <= 20; testIndex++) {
+        string folderName = "tests/test" + to_string(testIndex);
+        fs::create_directory(folderName);
+        string inputFileName = folderName + "/test" + to_string(testIndex) + ".inp";
+
+        // Tạo file input
+        ofstream inputFile(inputFileName);
+
+        // Ghi giá trị mảng a vào file
+        long long value = rand() % 900000000000000001LL + 100000000000000000LL; // Values between 10^9 and 10^18
+        inputFile << value;
 
         // Đóng file
         inputFile.close();
